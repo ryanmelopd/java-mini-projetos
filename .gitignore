@@ -1,0 +1,21 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Compilação
+out/
+build/
+target/
+
+# Arquivos Java compilados
+*.class
+
+# Logs
+*.log
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Maven Wrapper (opcional)
+!.mvn/wrapper/maven-wrapper.jar
