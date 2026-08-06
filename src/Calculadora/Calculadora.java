@@ -59,17 +59,14 @@ public class Calculadora {
     }
 
     public static double calcularSoma(double a,double b) {
-
         return a + b;
     }
 
     public static double calcularSubtracao(double a,double b) {
-
         return a - b;
     }
 
     public static double calcularMultiplicacao(double a,double b) {
-
         return a * b;
     }
 
