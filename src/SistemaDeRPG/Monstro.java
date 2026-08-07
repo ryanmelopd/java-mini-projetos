@@ -1,40 +1,41 @@
 package SistemaDeRPG;
 
-public class Personagem {
+public class Monstro {
     private String nome;
     private String classe;
-    private int nivel;
-    private final int id;
+    private int id;
     private int vida;
-    private int ataque;
+    public int ataque;
+    private int xp;
 
-    public Personagem(String nome,String classe,int nivel,int id,int vida,int ataque) {
+    public Monstro(String nome,String classe,int id,int vida,int ataque,int xp) {
         this.nome = nome;
         this.classe = classe;
-        this.nivel = nivel;
         this.id = id;
         this.vida = vida;
         this.ataque = ataque;
+        this.xp = xp;
     }
 
     public void mostrarInformacoes() {
         System.out.println("Nome: " + nome);
         System.out.println("Classe: " + classe);
-        System.out.println("Nível: " + nivel);
         System.out.println("ID: " + id);
         System.out.println("Vida: " + vida);
         System.out.println("Dano de ataque: " + ataque);
     }
 
-    public int getAtaque() {
-        return ataque;
+    public int getVida() {
+        return vida;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public void atacar(Monstro monstro) {
-        monstro.receberDano(ataque);
+    public void receberDano(int dano) {
+        vida -= dano;
     }
 }
+
+
