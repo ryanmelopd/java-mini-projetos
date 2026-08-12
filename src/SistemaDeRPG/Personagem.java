@@ -6,15 +6,27 @@ public class Personagem {
     private int nivel;
     private final int id;
     private int vida;
-    private int ataque;
+    private int acao;
 
-    public Personagem(String nome,String classe,int nivel,int id,int vida,int ataque) {
+    public Personagem(String nome, String classe, int nivel, int id, int vida, int acao) {
         this.nome = nome;
         this.classe = classe;
         this.nivel = nivel;
         this.id = id;
         this.vida = vida;
-        this.ataque = ataque;
+        this.acao = acao;
+    }
+
+    public int getAcao() {
+        return acao;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public int getVida() {
+        return vida;
     }
 
     public void mostrarInformacoes() {
@@ -23,18 +35,30 @@ public class Personagem {
         System.out.println("Nível: " + nivel);
         System.out.println("ID: " + id);
         System.out.println("Vida: " + vida);
-        System.out.println("Dano de ataque: " + ataque);
+        if (classe.equals("Curandeira")) {
+            System.out.println("Cura: " + acao);
+        } else {
+            System.out.println("Dano de ataque: " + acao);
+        }
     }
 
-    public int getAtaque() {
-        return ataque;
+    public void atacarMonstro(Monstro monstro) {
+        monstro.receberDano(acao);
     }
 
-    public String getNome() {
-        return nome;
+    public void receberDano(int dano) {
+        vida -= dano;
+
+        if (vida < 0) {
+            vida = 0;
+        }
     }
 
-    public void atacar(Monstro monstro) {
-        monstro.receberDano(ataque);
+    public void curar(Personagem personagem) {
+        personagem.vida += acao;
+    }
+
+    public boolean estaVivo() {
+        return vida > 0;
     }
 }
