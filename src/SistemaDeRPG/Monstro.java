@@ -5,24 +5,14 @@ public class Monstro {
     private String classe;
     private int id;
     private int vida;
-    public int ataque;
-    private int xp;
+    private int ataque;
 
-    public Monstro(String nome,String classe,int id,int vida,int ataque,int xp) {
+    public Monstro(String nome, String classe, int id, int vida, int ataque) {
         this.nome = nome;
         this.classe = classe;
         this.id = id;
         this.vida = vida;
         this.ataque = ataque;
-        this.xp = xp;
-    }
-
-    public void mostrarInformacoes() {
-        System.out.println("Nome: " + nome);
-        System.out.println("Classe: " + classe);
-        System.out.println("ID: " + id);
-        System.out.println("Vida: " + vida);
-        System.out.println("Dano de ataque: " + ataque);
     }
 
     public int getVida() {
@@ -33,9 +23,31 @@ public class Monstro {
         return nome;
     }
 
+    public int getAtaque() {
+        return ataque;
+    }
+
+    public void atacar(Personagem personagem) {
+        personagem.receberDano(ataque);
+    }
+
     public void receberDano(int dano) {
         vida -= dano;
+
+        if (vida < 0) {
+            vida = 0;
+        }
+    }
+
+    public void mostrarInformacoes() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Classe: " + classe);
+        System.out.println("ID: " + id);
+        System.out.println("Vida: " + vida);
+        System.out.println("Dano de ataque: " + ataque);
+    }
+
+    public boolean estaVivo() {
+        return vida > 0;
     }
 }
-
-
