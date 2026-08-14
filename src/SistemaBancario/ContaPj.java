@@ -2,10 +2,12 @@ package SistemaBancario;
 
 public class ContaPj extends Conta {
     private String cnpj;
+    private TipoConta tipoConta;
 
-    public ContaPj(String nome, int numero, double saldo, String cnpj) {
+    public ContaPj(String nome, int numero, double saldo, String cnpj, TipoConta tipoConta) {
         super(nome, numero, saldo);
         this.cnpj = cnpj;
+        this.tipoConta = tipoConta;
     }
 
     public String getCnpj() {
@@ -21,5 +23,6 @@ public class ContaPj extends Conta {
         System.out.println("Número da conta: " + getNumero());
         System.out.println("Saldo: " + getSaldo());
         System.out.println("CPF: " + cnpj);
+        System.out.println("Tipo de conta: " + tipoConta.getTipoDeConta());
     }
 }
