@@ -31,10 +31,6 @@ public abstract class Conta {
         return saldo;
     }
 
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
-    }
-
     protected void diminuirSaldo(double valor) {
         this.saldo -= valor;
     }
@@ -43,22 +39,8 @@ public abstract class Conta {
         this.saldo += valor;
     }
 
-    public void sacar(double valor) {
-        if (valor <= this.saldo) {
-            this.saldo -= valor;
-            System.out.println("Saque realizado.");
-        } else {
-            System.out.println("Erro: valor de saque excede o saldo.");
-        }
-    }
+    public abstract void sacar(double valor);
 
-    public void depositar(double valor) {
-        if (valor > 0) {
-            this.saldo += valor;
-            System.out.println("Depósito realizado.");
-        } else {
-            System.out.println("Erro: valor de depósito inválido.");
-        }
-    }
+    public abstract void depositar(double valor);
 
 }
