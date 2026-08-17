@@ -25,4 +25,34 @@ public class ContaPj extends Conta {
         System.out.println("CPF: " + cnpj);
         System.out.println("Tipo de conta: " + tipoConta.getTipoDeConta());
     }
+
+    @Override
+    public void sacar(double valor) {
+        double taxa = 5;
+        if (valor <= 0) {
+            System.out.println("Erro: valor de saque inválido.");
+        } else if (valor > 2000) {
+            System.out.println("Erro: o saque excede o limite de R$2000.");
+        } else if (valor + taxa > getSaldo()) {
+            System.out.println("Erro: saldo insuficiente para realizar o saque e pagar a taxa de R$5.");
+        } else {
+            diminuirSaldo(valor);
+            diminuirSaldo(taxa);
+            System.out.println("Saque realizado.");
+            System.out.println("Taxa de saque: R$5,00");
+        }
+    }
+
+    @Override
+    public void depositar(double valor) {
+        if (valor <= 0) {
+            System.out.println("Erro: valor de depósito inválido.");
+        } else if (valor > 4000) {
+            System.out.println("Erro: o depósito excede o limite de R$4000.");
+        } else {
+            aumentarSaldo(valor);
+            System.out.println("Depósito realizado.");
+        }
+    }
+
 }
