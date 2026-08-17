@@ -10,11 +10,11 @@ public class ContaFisica extends Conta {
         this.tipoConta = tipoConta;
     }
 
-    public String getcpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setcpf(String cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 

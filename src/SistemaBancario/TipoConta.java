@@ -13,4 +13,5 @@ public enum TipoConta {
     public String getTipoDeConta() {
         return tipoDeConta;
     }
+
 }
