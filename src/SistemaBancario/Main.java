@@ -26,14 +26,15 @@ public class Main {
         }
 
         if (opcaoConta.equals("pj")) {
-            ContaPj contaPj = new ContaPj(nome, 517490, 0, "12.345.678/0001-95", tipoConta);
-            contaPj.mostrarDados();
+            ContaPj conta1 = new ContaPj(nome, 517490, 0, "12.345.678/0001-95", tipoConta);
+            conta1.mostrarDados();
         } else if (opcaoConta.equals("fisica") || opcaoConta.equals("física")) {
-            ContaFisica contaFisica = new ContaFisica(nome, 523123, 0, "111.444.777-35", tipoConta);
-            contaFisica.mostrarDados();
+            ContaFisica conta2 = new ContaFisica(nome, 523123, 0, "111.444.777-35", tipoConta);
+            conta2.mostrarDados();
         } else {
             System.out.println("Conta inválida");
         }
+        
         input.close();
     }
 }
