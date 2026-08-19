@@ -1,6 +1,6 @@
 package SistemaDeNotificacoes;
 
-public class Whatsapp implements Notificacao {
+public class Whatsapp implements Notificacao, Agendavel {
     private long numero;
     private String mensagem;
 
@@ -28,5 +28,10 @@ public class Whatsapp implements Notificacao {
     @Override
     public void enviar() {
         System.out.println("Notificação no Whatsapp no número " + numero + ": " + mensagem);
+    }
+
+    @Override
+    public void agendar() {
+        System.out.println("Mensagem agendada para o número " + numero);
     }
 }

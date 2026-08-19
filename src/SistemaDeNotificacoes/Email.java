@@ -1,6 +1,6 @@
 package SistemaDeNotificacoes;
 
-public class Email implements Notificacao {
+public class Email implements Notificacao, Agendavel {
     private String email;
     private String mensagem;
 
@@ -30,4 +30,8 @@ public class Email implements Notificacao {
         System.out.println("Notificação em " + email + ": " + mensagem);
     }
 
+    @Override
+    public void agendar() {
+        System.out.println("Email agendado para " + email);
+    }
 }

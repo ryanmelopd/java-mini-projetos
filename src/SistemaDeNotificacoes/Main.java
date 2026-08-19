@@ -11,6 +11,9 @@ public class Main {
 
         for (Notificacao notificacao : notificacoes) {
             notificacao.enviar();
+            if (notificacao instanceof Agendavel) {
+                ((Agendavel) notificacao).agendar();
+            }
         }
 
     }
