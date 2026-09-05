@@ -1,4 +1,4 @@
-package poo.AgendaDeContatos;
+package collections.AgendaDeContatos;
 
 public class Contato {
     private long id;

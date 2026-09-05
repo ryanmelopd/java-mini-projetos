@@ -1,4 +1,4 @@
-package poo.AgendaDeContatos;
+package collections.AgendaDeContatos;
 
 import java.util.ArrayList;
 import java.util.List;
